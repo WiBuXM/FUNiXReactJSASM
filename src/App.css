@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;1,300&display=swap');
+.employee:hover {
+    background-color: aquamarine;
+    cursor: pointer;
+}
+.nav-bar{
+    font-size: 24px;
+}
+.employee{
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    
+}
+.contents{
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+.content-heading{
+    font-size: 32px;
+    margin: 12px;
+    font-weight: bolder;
+    text-transform: uppercase;
+}
+.heading-title{
+    font-size: 32px;
+    font-weight: bolder;
+    text-transform: uppercase;
+}
+body{
+    font-family: 'Raleway', sans-serif;
+}
