@@ -1,10 +1,10 @@
 import React, {Component} from 'react'
-import {STAFFS} from "./shared/staffs";
+import {ROLE, STAFFS} from "./shared/staffs";
 import dateFormat from 'dateformat';
 class Menu extends Component {
     constructor(props){
         super(props);
-        this.state = {STAFFS,
+        this.state = {STAFFS,ROLE,
             selectEmployee:null
         };
         
@@ -25,6 +25,7 @@ class Menu extends Component {
                     <p>Phòng Ban: {employee.department.name}</p>
                     <p>Số ngày nghỉ còn lại: {employee.annualLeave}</p>
                     <p>Số ngày làm thêm: {employee.overTime}</p>
+                    <p>Chức danh: {ROLE.NORMAL_STAFF}</p>
                 </div></div>
             )
         }
