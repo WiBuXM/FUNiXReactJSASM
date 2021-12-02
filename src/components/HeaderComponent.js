@@ -16,30 +16,30 @@ class Header extends Component{
         return(
             <React.Fragment>
                 <Navbar dark className="bg-primary" expand="md">
-                    <NavbarBrand href="/home">
+                    <NavbarBrand href="/">
             <img src="assets/images/logo.png" height="30"/>
                     </NavbarBrand>
                     <Nav navbar>
-                        <BrowserRouter>
+                      
                         <NavItem>
-                         <NavLink className="nav-link" to="#">
+                         <NavLink className="nav-link" to="/staff">
                             <i className="fa fa-users fa-lg" > Nhân Viên</i>
                          </NavLink>
                         </NavItem> 
-                        </BrowserRouter>
-                        <BrowserRouter>
+                        
+                      
                         <NavItem>
-                         <NavLink className="nav-link" to="#">
+                         <NavLink className="nav-link" to="/depament">
                             <i className="fa fa-address-card fa-lg" > Phòng Ban</i>
                          </NavLink>
                         </NavItem> 
-                        </BrowserRouter><BrowserRouter>
+                       
                         <NavItem>
                          <NavLink className="nav-link" to="#">
                             <i className="fa fa-money fa-lg" > Bảng Lương</i>
                          </NavLink>
                         </NavItem> 
-                        </BrowserRouter>
+                        
                     </Nav>
                 </Navbar>
             </React.Fragment>

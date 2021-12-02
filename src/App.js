@@ -3,26 +3,44 @@ import './App.css';
 import Header from './components/HeaderComponent';
 import {Switch ,Route, Redirect} from 'react-router-dom';
 import Footer from './components/FooterComponent';
-import {BrowserRouter} from 'react-router-dom'
-import Main from './components/StaffListComponent';
-import RenderEmployee from './components/StaffInfo';
-function App() {
-  return (
+import {BrowserRouter as Router} from 'react-router-dom'
+import RenderStaffMenu from './components/StaffListComponent';
+import { STAFFS,DEPARTMENTS } from './components/shared/staffs';
+import StaffDetail from './components/StaffIdComponent';
+import Depaments from './components/DepartmentComponent';
+
+class App extends Component {
+constructor(props) {
+  super(props);
+  this.state={
+    staff: STAFFS
+    ,depaments:DEPARTMENTS
+  }
+}
+
+
+render(){
+  const StaffId = ({match})=>{
+    return (
+     <StaffDetail staff={this.state.staff.filter((staff)=> staff.id === parseInt(match.params.id))[0]} />
+    )
+  }
+  return (<Router>
     <div className="App">
       <div>
       <Header/>
-      <BrowserRouter>
         <Switch>
-          <Route exact path="/" component={Main} />
-          <Route  path="staff/1" />
-          <Redirect to="/home"/>
+          <Route exact path="/staff" component={()=> <RenderStaffMenu stafflish={this.state.staff} />} />
+          <Route path="/staff/:id" component={StaffId} />
+          <Route path="/depament" component={()=><Depaments depament={this.state.depaments}  />} />
+          <Redirect to="/staff" />
         </Switch>
-        </BrowserRouter>
+       
       <Footer />
        
         </div>
     </div>
-  );
+      </Router> );}
 }
 
 export default App;
