@@ -8,7 +8,7 @@ import RenderStaffMenu from './components/StaffListComponent';
 import { STAFFS,DEPARTMENTS } from './components/shared/staffs';
 import StaffDetail from './components/StaffIdComponent';
 import Depaments from './components/DepartmentComponent';
-
+import Wage from './components/WageComponent';
 class App extends Component {
 constructor(props) {
   super(props);
@@ -33,6 +33,7 @@ render(){
           <Route exact path="/staff" component={()=> <RenderStaffMenu stafflish={this.state.staff} />} />
           <Route path="/staff/:id" component={StaffId} />
           <Route path="/depament" component={()=><Depaments depament={this.state.depaments}  />} />
+          <Route path="/payroll" component={()=><Wage staff={this.state.staff}  />} />
           <Redirect to="/staff" />
         </Switch>
        

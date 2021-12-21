@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 
+
+//Hiển thị danh sách phòng ban
 const Depaments=({depament})=>{
-    
       const depamentInfor=  depament.map((depament)=>{
             return(
             <div key={depament.id} className="col-lg-4 col-md-2 col-sm-12 text-center my-2 p-2">
@@ -16,7 +17,7 @@ const Depaments=({depament})=>{
         }
     )
     return(
-        <div className="row mx-2">
+        <div className="row mx-3">
             {depamentInfor}
         </div>
     )
